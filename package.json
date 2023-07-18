@@ -33,6 +33,8 @@
     "core-js": "^3.26.0",
     "hammerjs": "^2.0.8",
     "json-logic-js": "^2.0.2",
+    "sass": "^1.63.6",
+    "sass-loader": "^13.3.2",
     "shortid": "^2.2.16",
     "vue": "^2.6.14",
     "vue-tel-input": "^2.2.1"

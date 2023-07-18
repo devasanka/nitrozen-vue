@@ -1,0 +1,186 @@
+/////////////////////////////////////////////////
+/* Typography */
+/////////////////////////////////////////////////
+@import 'jds-tokens';
+
+// Only in utils classes, important gets added to the styles
+@function is-important($important){
+    @return #{if($important, '!important', '')};
+}
+
+@mixin text($type, $important: false) {
+    font-family: 'JioType', helvetica, arial, sans-serif;
+
+    @if $type == 'heading-xl' {
+        font-weight: 900 is-important($important);
+        font-size: $heading-l is-important($important);
+        letter-spacing: -1.92px is-important($important);
+        line-height: 1 is-important($important);
+    
+        @media (min-width: 992px) {
+            font-size: $heading-xl is-important($important);
+            letter-spacing: -2.6399999999999997px is-important($important);
+        }        
+    }
+
+    @if $type == 'heading-l' {
+        font-weight: 900 is-important($important);
+        font-size: $heading-m is-important($important); // Need to check, as per JDS code, it is 3 rem, but as per JDS guidelines it should be 40px
+        letter-spacing: -1.44px is-important($important);
+        line-height: 1 is-important($important);
+    
+        @media (min-width: 992px) {
+            font-size: $heading-l is-important($important);
+            letter-spacing: -1.92px is-important($important);
+        }       
+    }
+
+    @if $type == 'heading-m' {
+        font-weight: 900 is-important($important);
+        font-size: $heading-m is-important($important);
+        letter-spacing: -1.2px is-important($important);
+        line-height: 1 is-important($important);      
+    }
+
+    @if $type == 'heading-s' {
+        font-weight: 900 is-important($important);
+        font-size: $heading-s is-important($important);
+        letter-spacing: -0.96px is-important($important);
+        line-height: 1 is-important($important);     
+    }
+
+    @if $type == 'heading-xs' {
+        font-weight: 900 is-important($important);
+        font-size: $heading-xs is-important($important);
+        letter-spacing: -0.72px is-important($important);
+        line-height: 1 is-important($important);    
+    }
+
+    @if $type == 'heading-xxs' {
+        font-weight: 900 is-important($important);
+        font-size: $heading-xxs is-important($important);
+        letter-spacing: -0.48px is-important($important);
+        line-height: 1 is-important($important);  
+    }
+
+    @if $type == 'body-l' {
+        font-weight: 500 is-important($important);
+        font-size: $text-body-l is-important($important);
+        letter-spacing: -0.12px is-important($important);
+        line-height: 1.3333333333333333 is-important($important);
+    }
+
+    @if $type == 'body-l-light' {
+        font-weight: 300 is-important($important);
+        font-size: $text-body-l is-important($important);
+        letter-spacing: -0.12px is-important($important);
+        line-height: 1.3333333333333333 is-important($important);
+    }
+
+    @if $type == 'body-l-bold' or $type == 'body-l-link' {
+        font-weight: 700 is-important($important);
+        font-size: $text-body-l is-important($important);
+        letter-spacing: -0.12px is-important($important);
+        line-height: 1.3333333333333333 is-important($important);
+    }
+
+    @if $type == 'body-m' {
+        font-weight: 500 is-important($important);
+        font-size: $text-body-m is-important($important);
+        letter-spacing: -0.09px is-important($important);
+        line-height: 1.3333333333333333 is-important($important);
+    }
+
+    @if $type == 'body-m-light' {
+        font-weight: 300 is-important($important);
+        font-size: $text-body-m is-important($important);
+        letter-spacing: -0.09px is-important($important);
+        line-height: 1.3333333333333333 is-important($important);
+    }
+
+    @if $type == 'body-m-bold' or $type == 'body-m-link' {
+        font-weight: 700 is-important($important);
+        font-size: $text-body-m is-important($important);
+        letter-spacing: -0.09px is-important($important);
+        line-height: 1.3333333333333333 is-important($important);
+    }
+
+    @if $type == 'body-s' {
+        font-weight: 500 is-important($important);
+        font-size: $text-body-s is-important($important);
+        letter-spacing: -0.08px is-important($important);
+        line-height: 1.5 is-important($important);
+    }
+
+    @if $type == 'body-s-light' {
+        font-weight: 300 is-important($important);
+        font-size: $text-body-s is-important($important);
+        letter-spacing: -0.08px is-important($important);
+        line-height: 1.5 is-important($important);
+    }
+
+    @if $type == 'body-s-bold' or $type == 'body-s-link' {
+        font-weight: 700 is-important($important);
+        font-size: $text-body-s is-important($important);
+        letter-spacing: -0.08px is-important($important);
+        line-height: 1.5 is-important($important);
+    }
+
+    @if $type == 'body-xs' {
+        font-weight: 500 is-important($important);
+        font-size: $text-body-xs is-important($important);
+        letter-spacing: -0.07px is-important($important);
+        line-height: 1.4285714285714286 is-important($important);
+    }
+
+    @if $type == 'body-xs-light' {
+        font-weight: 300 is-important($important);
+        font-size: $text-body-xs is-important($important);
+        letter-spacing: -0.07px is-important($important);
+        line-height: 1.4285714285714286 is-important($important);
+    }
+
+    @if $type == 'body-xs-bold' or $type == 'body-xs-link' {
+        font-weight: 700 is-important($important);
+        font-size: $text-body-xs is-important($important);
+        letter-spacing: -0.07px is-important($important);
+        line-height: 1.4285714285714286 is-important($important);
+    }
+
+    @if $type == 'body-xxs' {
+        font-weight: 500 is-important($important);
+        font-size: $text-body-xxs is-important($important);
+        letter-spacing: -0.06px is-important($important);
+        line-height: 1.3333333333333333 is-important($important);
+    }
+
+    @if $type == 'body-xxs-light' {
+        font-weight: 300 is-important($important);
+        font-size: $text-body-xxs is-important($important);
+        letter-spacing: -0.06px is-important($important);
+        line-height: 1.3333333333333333 is-important($important);
+    }
+
+    @if $type == 'body-xxs-bold' or $type == 'body-xxs-link' {
+        font-weight: 700 is-important($important);
+        font-size: $text-body-xxs is-important($important);
+        letter-spacing: -0.06px is-important($important);
+        line-height: 1.3333333333333333 is-important($important);
+    }
+
+    @if $type == 'overline' {
+        font-weight: 700 is-important($important);
+        text-transform: uppercase is-important($important);
+        font-size: $text-body-xxs is-important($important);
+        letter-spacing: 0.06px is-important($important);
+        line-height: 1.3333333333333333 is-important($important); 
+    }
+
+    @if $type == 'list-title' {
+        font-weight: 500 is-important($important);
+        text-transform: none is-important($important);
+        font-size: $text-body-s is-important($important);
+        letter-spacing: -0.08px is-important($important);
+        line-height: 1.25 is-important($important);
+    }
+}

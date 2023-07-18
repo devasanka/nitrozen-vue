@@ -64,7 +64,7 @@ export default {
         }, this.$slots.default)
 
         let buttonAttrs = {
-            staticClass: 'n-button ripple',
+            staticClass: 'n-button ripple jm-btn',
             class: [{
                 'n-button-rounded': this.rounded,
                 'n-button-primary': this.theme == 'primary',
@@ -93,6 +93,6 @@ export default {
     }
 }
 </script>
-<style lang="less">
-@import './NBtn.less';
+<style lang="scss">
+@import './_button.scss';
 </style>

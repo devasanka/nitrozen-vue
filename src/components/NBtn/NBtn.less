@@ -1,5 +1,6 @@
 @import './../../base/base.less';
-
+@import '../../base/_jds-tokens.scss';
+@import '../../base/_text-mixins.scss';
 .n-button {
     height: 4rem;
     cursor: pointer;
@@ -261,3 +262,46 @@
     text-underline-position: under;
     text-decoration-thickness: .15rem;
 }
+
+
+@button-hover-selector: '&:not(.icon-secondary):not(.disabled):not(:active):hover';
+@button-active-selector: '&:not(.disabled):active';
+
+.jm-btn {
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  /* margin: 0; */
+//   padding: @spacing-s @spacing-base;
+  cursor: pointer;
+//   min-width: @spacing-xl;
+
+  box-sizing: border-box;
+  border-width: 1px;
+  border-style: solid;
+  transition-property: background-color;
+
+//   border-radius: @radius-pill;
+  vertical-align: top;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-evenly;
+
+  min-height: 3em;
+//   background-color: @light-primary-50;
+  border-color: transparent;
+
+
+
+  &.disabled,
+  &[disabled],
+  &.jm-btn-error.disabled,
+  &.jm-btn-success.disabled {
+    /*pointer-events: none;*/
+    cursor: default;
+    opacity: 0.3;
+  }
+}
+

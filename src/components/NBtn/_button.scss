@@ -1,0 +1,489 @@
+@import '../../base/jds-tokens';
+@import '../../base/text-mixins';
+
+$button-hover-selector: '&:not(.icon-secondary):not(.disabled):not(:active):hover';
+$button-active-selector: '&:not(.disabled):active';
+
+.jm-btn {
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  /* margin: 0; */
+  padding: $spacing-s $spacing-base;
+  cursor: pointer;
+  min-width: $spacing-xl;
+
+  box-sizing: border-box;
+  border-width: 1px;
+  border-style: solid;
+  transition-property: background-color;
+
+  border-radius: $radius-pill;
+  vertical-align: top;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-evenly;
+
+  min-height: 3em;
+  background-color: $light-primary-50;
+  border-color: transparent;
+  color: $light-primary-inverse;
+  @include text(body-s-bold);
+
+  transition: $transitions-ease-quick $transitions-duration-rapid;
+
+  &.error,
+  &.success {
+    transition: $transitions-ease-joyfulentrance $transitions-duration-medium;
+  }
+
+  &.disabled,
+  &[disabled],
+  &.jm-btn-error.disabled,
+  &.jm-btn-success.disabled {
+    /*pointer-events: none;*/
+    cursor: default;
+    opacity: 0.3;
+  }
+
+  &.primary {
+    color: $light-primary-inverse;
+    background-color: $light-primary-50;
+    border-color: transparent;
+
+
+    #{$button-hover-selector} {
+      color: $light-primary-inverse;
+      background-color: $light-primary-60;
+      border-color: transparent;
+    }
+
+    &.disabled {
+      color: $light-primary-inverse;
+      background-color: $light-primary-60;
+      border-color: transparent;
+    }
+
+    #{$button-active-selector} {
+      background-color: $light-primary-60;
+      color: $light-primary-30;
+    }
+
+    &:focus-visible {
+      // border: none;
+      background-color: $light-primary-60;
+      color: $light-primary-inverse;
+      box-shadow: 0 0 0 $spacing-xxs $light-primary-80;
+    }
+
+    &.error {
+      background-color: $light-feedback-error-20;
+      color: $light-feedback-error-80;
+
+      #{$button-hover-selector} {
+        background-color: $light-feedback-error-50;
+        color: $light-white;
+      }
+
+      #{$button-active-selector} {
+        background-color: $light-feedback-error-80;
+        color: $light-feedback-error-20;
+      }
+
+      &:focus-visible {
+        background-color: $light-feedback-error-20;
+        box-shadow: 0 0 0 $spacing-xxs $light-feedback-error-50;
+      }
+
+      &.disabled {
+        background-color: $light-feedback-error-20;
+      }
+    }
+
+    &.success {
+      background-color: $light-feedback-success-20;
+      color: $light-feedback-success-80;
+
+      #{$button-hover-selector} {
+        background-color: $light-feedback-success-50;
+        color: $light-white;
+      }
+
+      #{$button-active-selector} {
+        background-color: $light-feedback-success-80;
+        color: $light-feedback-success-20;
+      }
+
+      &:focus-visible {
+        background-color: $light-feedback-success-20;
+        box-shadow: 0 0 0 $spacing-xxs $light-feedback-success-50;
+      }
+
+      &.disabled {
+        background-color: $light-feedback-success-20;
+      }
+    }
+
+    &.warning {
+      background-color: $light-feedback-warning-20;
+      color: $light-feedback-warning-80;
+
+      #{$button-hover-selector} {
+        background-color: $light-feedback-warning-50;
+        color: $light-white;
+      }
+
+      #{$button-active-selector} {
+        background-color: $light-feedback-warning-80;
+        color: $light-feedback-warning-20;
+      }
+
+      &:focus-visible {
+        background-color: $light-feedback-warning-20;
+        box-shadow: 0 0 0 $spacing-xxs $light-feedback-warning-50;
+      }
+
+      &.disabled {
+        background-color: $light-feedback-warning-20;
+      }
+    }
+  }
+
+  &.secondary {
+    color: $light-primary-60;
+    background-color: transparent;
+    border-color: $light-primary-grey-40;
+
+    #{$button-hover-selector} {
+      color: $light-primary-60;
+      background-color: transparent;
+      border-color: $light-primary-60;
+    }
+
+    &.disabled {
+      background-color: transparent;
+      border-color: $light-primary-grey-80;
+    }
+
+    #{$button-active-selector}, &.active {
+      background-color: $light-primary-20;
+      color: $light-primary-60;
+      border-color: $light-primary-60;
+    }
+
+    &:focus-visible {
+      background-color: transparent;
+      // border: none;
+      color: $light-primary-60;
+      box-shadow: 0 0 0 $spacing-xxs $light-primary-50;
+    }
+
+    &.error {
+      color: $light-feedback-error-80;
+
+      #{$button-hover-selector} {
+        border-color: $light-feedback-error-50;
+        color: $light-feedback-error-80;
+      }
+
+      #{$button-active-selector} {
+        border-color: $light-feedback-error-80;
+        color: $light-feedback-error-80;
+        background-color: $light-feedback-error-20;
+      }
+
+      &:focus-visible {
+        // border: none;
+        color: $light-feedback-error-80;
+        box-shadow: 0 0 0 $spacing-xxs $light-feedback-error-50;
+      }
+
+      &.disabled {
+        border-color: $light-primary-grey-80;
+      }
+    }
+
+    &.success {
+      color: $light-feedback-success-80;
+
+      #{$button-hover-selector} {
+        border-color: $light-feedback-success-50;
+        color: $light-feedback-success-80;
+      }
+
+      #{$button-active-selector} {
+        border-color: $light-feedback-success-80;
+        color: $light-feedback-success-80;
+        background-color: $light-feedback-success-20;
+      }
+
+      &:focus-visible {
+        // border: none;
+        color: $light-feedback-success-80;
+        box-shadow: 0 0 0 $spacing-xxs $light-feedback-success-50;
+      }
+
+      &.disabled {
+        border-color: $light-primary-grey-80;
+        color: $light-feedback-success-80;
+      }
+    }
+
+    &.warning {
+      color: $light-feedback-warning-80;
+
+      #{$button-hover-selector} {
+        border-color: $light-feedback-warning-50;
+        color: $light-feedback-warning-80;
+      }
+
+      #{$button-active-selector} {
+        border-color: $light-feedback-warning-80;
+        color: $light-feedback-warning-80;
+        background-color: $light-feedback-warning-20;
+      }
+
+      &:focus-visible {
+        // border: none;
+        color: $light-feedback-warning-80;
+        box-shadow: 0 0 0 $spacing-xxs $light-feedback-warning-50;
+      }
+
+      &.disabled {
+        border-color: $light-primary-grey-80;
+      }
+    }
+  }
+
+  &.tertiary {
+    color: $light-primary-60;
+    background-color: transparent;
+    border: none;
+
+    #{$button-hover-selector} {
+      color: $light-primary-60;
+      background-color: $light-primary-20;
+    }
+
+    #{$button-active-selector} {
+      background-color: $light-primary-30;
+      color: $light-primary-60;
+    }
+
+    &:focus-visible {
+      background-color: $light-primary-20;
+      color: $light-primary-60;
+      box-shadow: 0 0 0 $spacing-xxs $light-primary-80;
+    }
+
+    &.disabled {
+      color: $light-primary-60;
+      background-color: transparent;
+    }
+
+    &.selector {
+      color: $light-primary-30;
+      background-color: $light-primary-70;
+    }
+
+    &.error {
+      color: $light-feedback-error-80;
+
+      #{$button-hover-selector} {
+        color: $light-feedback-error-80;
+        background-color: $light-feedback-error-20;
+      }
+
+      #{$button-active-selector} {
+        color: $light-feedback-error-20;
+        background-color: $light-feedback-error-80;
+      }
+
+      &:focus-visible {
+        background-color: $light-feedback-error-20;
+        color: $light-feedback-error-80;
+        box-shadow: 0 0 0 $spacing-xxs $light-feedback-error-50;
+      }
+
+      &.disabled {
+        color: $light-feedback-error-80;
+      }
+    }
+
+    &.success {
+      color: $light-feedback-success-80;
+
+      #{$button-hover-selector} {
+        color: $light-feedback-success-80;
+        background-color: $light-feedback-success-20;
+      }
+
+      #{$button-active-selector} {
+        color: $light-feedback-success-20;
+        background-color: $light-feedback-success-80;
+      }
+
+      &:focus-visible {
+        background-color: $light-feedback-success-20;
+        color: $light-feedback-success-80;
+        box-shadow: 0 0 0 $spacing-xxs $light-feedback-success-50;
+      }
+
+      &.disabled {
+        color: $light-feedback-success-80;
+      }
+    }
+
+    &.warning {
+      color: $light-feedback-warning-80;
+
+      #{$button-hover-selector} {
+        border-color: $light-feedback-warning-50;
+        color: $light-feedback-warning-80;
+      }
+
+      #{$button-active-selector} {
+        border-color: $light-feedback-warning-80;
+        color: $light-feedback-warning-80;
+        background-color: $light-feedback-warning-20;
+      }
+
+      &:focus-visible {
+        // border: none;
+        color: $light-feedback-warning-80;
+        box-shadow: 0 0 0 $spacing-xxs $light-feedback-warning-50;
+      }
+
+      &.disabled {
+        border-color: $light-primary-grey-80;
+      }
+    }
+  }
+  &.tertiary-s {
+    color: $light-primary-60;
+    background-color: $light-primary-20;
+    border: none;
+
+    #{$button-hover-selector} {
+      color: $light-primary-60;
+      background-color: $light-primary-30;
+    }
+
+    #{$button-active-selector} {
+      background-color: $light-primary-40;
+      color: $light-primary-60;
+    }
+
+    &:focus-visible {
+      background-color: $light-primary-30;
+      color: $light-primary-60;
+      box-shadow: 0 0 0 $spacing-xxs $light-primary-80;
+    }
+  }
+
+  &.primary-sparkle {
+    color: $light-sparkle-80;
+    background-color: $light-sparkle-20;
+    border-color: transparent;
+
+    #{$button-hover-selector} {
+      color: $light-sparkle-80;
+      background-color: $light-sparkle-30;
+      border-color: transparent;
+    }
+
+    &.disabled {
+      color: $light-sparkle-80;
+      background-color: $light-sparkle-20;
+      border-color: transparent;
+      opacity: 0.3;
+    }
+
+    #{$button-active-selector} {
+      background-color: transparent;
+      color: $light-sparkle-80;
+    }
+
+    &:focus-visible {
+      // border: none;
+      background-color: $light-sparkle-30;
+      color: $light-primary-inverse;
+      box-shadow: 0 0 0 $spacing-xxs $light-sparkle-80;
+    }
+  }
+
+  &.jm-icon {
+    text-align: left;
+    min-width: 3em;
+    justify-content: space-between;
+    padding: $spacing-base;
+  }
+
+  &.small {
+    border-width: 1px;
+    min-height: 2em;
+    padding: $spacing-xxs $spacing-base;
+
+    &.jm-icon {
+      text-align: left;
+      min-width: 2em;
+      justify-content: space-between;
+      padding: $spacing-xxs;
+    }
+  }
+
+  &.medium {
+    padding: $spacing-s $spacing-base;
+
+    &.jm-icon {
+      text-align: left;
+      min-width: 3em;
+      justify-content: space-between;
+      padding: $spacing-s;
+    }
+  }
+
+  &.large {
+    padding: $spacing-base $spacing-m;
+
+    &.jm-icon {
+      text-align: left;
+      min-width: 3.5em;
+      justify-content: space-between;
+      padding: $spacing-base;
+    }
+  }
+
+  &.white{
+    background-color: $light-primary-background;
+    //border: 1px solid $light-primary-grey-40;
+  }
+
+  &.full-width {
+    min-width: 100%;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &.center {
+    justify-content: center !important;
+  }
+}
+
+.prod-fashion{
+  .variant-holder{
+    .product-size-button-list-item{
+      .jm-btn{
+        &.secondary{
+          #{$button-hover-selector} {
+            color: $light-primary-60;
+            background-color: #e5f1f7 !important;
+            border-color: $light-primary-60;
+          }
+        }
+      }
+    }
+  }
+}
